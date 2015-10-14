@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html lang ="en-US">
+<head>
+<meta charset="UTF-8">
+<title></title>
+<script>
+var a = [];
+for (var i=0;i<10001;++i)
+{
+a.push(Math.floor(Math.random() * (10000)));
+document.write("["+i+"]="+a[i]+"; "); 
+}
+for (var i in a)
+document.write("["+i+"]="+[i]+"; "); 
+
+function QuickSort(a, p, r)
+{
+        if(p<r)
+        {
+                var q = Partition(a, p, r);
+                QuickSort(a, p, q);
+                QuickSort(a, q+1, r);
+        }
+}
+function Partition(a, p, r)
+{
+        var x = a[r];
+        var i=p-1;
+        for(var j=p; j<=r ;j++ )
+        {
+                if(a[j] <= x)
+                {
+                        i++;
+                        var temp = a[i];
+                        a[i] = a[j];
+                        a[j] = temp;
+                }
+        }
+        document.write(i<r ?i : i-1);
+}
+</script>
+</head>
+</html>
