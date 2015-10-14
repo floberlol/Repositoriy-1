@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html lang ="en-US">
+<head>
+<meta charset="UTF-8">
+<title></title>
+<script>
+var a = [];
+for (var i=0;i<10001;++i)
+{
+a.push(Math.floor(Math.random() * (10000)));//Генерируем случайные числа от 100 до 200
+document.write("["+i+"]="+a[i]+"; "); 
+}
+document.write("<br/><br/><br/>"); 
+
+for (var i=0;i<a.length;++i)
+{
+var n=i;
+for (var j=i+1;j<a.length;++j)
+if (a[j]>a[n]) //Сортировка по убыванию, по возрастанию будет "<"
+n=j;
+if (n!=i)
+{
+var v=a[i];
+a[i]=a[n];
+a[n]=v;
+}
+}
+
+for (var i in a)
+document.write("["+i+"]="+[i]+"; "); 
+</script>
+</head>
+</html>
